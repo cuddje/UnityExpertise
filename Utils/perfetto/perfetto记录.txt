@@ -1,0 +1,4 @@
+adb shell perfetto --txt -c /data/misc/perfetto-configs/john.pbtx -o /data/misc/perfetto-traces/john.perfetto-trace
+adb push D:\John\Desktop\john.pbtx /data/misc/perfetto-configs   
+adb pull /data/misc/perfetto-traces D:\John\Desktop
+adb shell setprop persist.traced.enable 1

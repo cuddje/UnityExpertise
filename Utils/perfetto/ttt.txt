@@ -1,0 +1,13 @@
+buffers: {
+    size_kb: 8960
+    fill_policy: DISCARD
+}
+data_sources: {
+    config {
+        name: "android.ftrace"
+        ftrace_config {
+            ftrace_events: "surface/setFrameRate"
+        }
+    }
+}
+duration_ms: 30000

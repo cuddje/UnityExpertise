@@ -1,0 +1,32 @@
+buffers: {
+    size_kb: 30720
+    fill_policy: DISCARD
+}
+buffers: {
+    size_kb: 2048
+    fill_policy: DISCARD
+}
+data_sources: {
+    config {
+        name: "android.packages_list"
+        target_buffer: 1
+    }
+}
+data_sources: {
+    config {
+        name: "linux.system_info"
+        target_buffer: 1
+    }
+}
+data_sources: {
+    config {
+        name: "linux.ftrace"
+        ftrace_config {
+            ftrace_events: "raw_syscalls/sys_enter"
+            ftrace_events: "raw_syscalls/sys_exit"
+            ftrace_events: "ftrace/print"
+            atrace_apps: "*"
+        }
+    }
+}
+duration_ms: 10000
